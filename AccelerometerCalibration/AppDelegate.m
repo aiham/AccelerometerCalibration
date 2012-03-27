@@ -2,15 +2,15 @@
 //  AppDelegate.m
 //  AccelerometerCalibration
 //
-//  Created by Mohamad Aiham Hammami on 27/03/12.
-//  Copyright __MyCompanyName__ 2012. All rights reserved.
+//  Created by Aiham Hammami on 27/03/12.
+//  Copyright Aiham Hammami 2012. All rights reserved.
 //
 
 #import "cocos2d.h"
 
 #import "AppDelegate.h"
 #import "GameConfig.h"
-#import "HelloWorldLayer.h"
+#import "MainLayer.h"
 #import "RootViewController.h"
 
 @implementation AppDelegate
@@ -109,8 +109,9 @@
 	// Removes the startup flicker
 	[self removeStartupFlicker];
 	
-	// Run the intro Scene
-	[[CCDirector sharedDirector] runWithScene: [HelloWorldLayer scene]];
+    id scene = [CCScene node];
+    [scene addChild:[MainLayer node]];
+	[[CCDirector sharedDirector] runWithScene:scene];
 }
 
 
