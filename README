@@ -1,0 +1,10 @@
+iOS Accelerometer Calibration
+---
+
+Calibrate the iPhone accelerometer to custom default positions. The code is in the MainLayer class. It created a 'Calibrate' button on screen which when pressed will reset the default position for the accelerometer. This allows the user to hold the device in various positions while still being able to use the accelerometer freely.
+
+I used cocos2d v1 so that it would run on my old 2nd gen iPod Touch. Ignore all the compiler warnings, it's just because I'm using the old compiler with iOS SDK 5.1
+
+Contains:
+- cocos2d 1.x
+- kazmath
