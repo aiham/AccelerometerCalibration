@@ -166,6 +166,7 @@
 
 - (float) limitAcceleration:(float)acceleration {
     float limited_acceleration = ABS(acceleration);
+    float sign_convention = acceleration / limited_acceleration;
     const float min = 0.01f, max = 0.2f;
     
     if (limited_acceleration < min) {
@@ -174,7 +175,7 @@
         limited_acceleration = max;
     }
     
-    return limited_acceleration;
+    return limited_acceleration * sign_convention;
 }
 
 - (void) updateXYZLabels:(kmVec3)vec x:(int)x_tag y:(int)y_tag z:(int)z_tag {
