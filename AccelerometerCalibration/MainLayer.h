@@ -20,7 +20,6 @@
 - (void) calibrate;
 - (void) updateRawAcceleration:(UIAcceleration *)acceleration;
 - (float) normaliseAcceleration:(float)acceleration;
-- (float) cartesianToAngle:(CGPoint)point;
 - (float) limitAcceleration:(float)acceleration;
 - (void) updateXYZLabels:(kmVec3)vec x:(int)x_tag y:(int)y_tag z:(int)z_tag;
 - (void) updateMinMaxXYZLabels;

@@ -164,24 +164,14 @@
     return acceleration;
 }
 
-- (float) cartesianToAngle:(CGPoint)point {
-    if (point.x == 0 && point.y == 0) {
-        return 0.0f;
-    }
-    
-    return atan2f(point.y, point.x);
-}
-
 - (float) limitAcceleration:(float)acceleration {
-    float limited_acceleration = acceleration;
-    float min = 0.01f, max = 0.2f;
+    float limited_acceleration = ABS(acceleration);
+    const float min = 0.01f, max = 0.2f;
     
-    if (powf(limited_acceleration, 2) < powf(min, 2)) {
-        limited_acceleration = 0;
-    }
-    
-    if (powf(limited_acceleration, 2) > powf(max, 2)) {
-        limited_acceleration = max * limited_acceleration * sqrt(powf(limited_acceleration, 2)) / (limited_acceleration * limited_acceleration);
+    if (limited_acceleration < min) {
+        limited_acceleration = min;
+    } else if (limited_acceleration > max) {
+        limited_acceleration = max;
     }
     
     return limited_acceleration;
